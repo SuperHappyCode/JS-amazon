@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "John",
+        sayHello() {
+          console.log(`hello, my name is ${this.name}`);
+        },
+      };
+      function greet(params) {
+        this.sayHello();
+      }
+      const boundGreet = () => person.bind(greet);
+      boundGreet("Jack");
+    </script>
+  </body>
+</html>
